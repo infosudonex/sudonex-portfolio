@@ -128,10 +128,328 @@ export default function Hero() {
           animate="visible"
           className="text-center"
         >
+          {/* Animated SVG Graphic */}
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center mb-8"
+          >
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 200 200"
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <motion.stop
+                    offset="0%"
+                    stopColor="#3b82f6"
+                    animate={{
+                      stopColor: ['#3b82f6', '#8b5cf6', '#ec4899', '#3b82f6'],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                  />
+                  <motion.stop
+                    offset="100%"
+                    stopColor="#8b5cf6"
+                    animate={{
+                      stopColor: ['#8b5cf6', '#ec4899', '#3b82f6', '#8b5cf6'],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                  />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <motion.stop
+                    offset="0%"
+                    stopColor="#ec4899"
+                    animate={{
+                      stopColor: ['#ec4899', '#3b82f6', '#8b5cf6', '#ec4899'],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                  />
+                  <motion.stop
+                    offset="100%"
+                    stopColor="#8b5cf6"
+                    animate={{
+                      stopColor: ['#8b5cf6', '#3b82f6', '#ec4899', '#8b5cf6'],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                  />
+                </linearGradient>
+              </defs>
+
+              {/* Animated circles */}
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="15"
+                fill="url(#gradient1)"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.circle
+                cx="150"
+                cy="50"
+                r="15"
+                fill="url(#gradient2)"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.5,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.circle
+                cx="50"
+                cy="150"
+                r="15"
+                fill="url(#gradient2)"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.circle
+                cx="150"
+                cy="150"
+                r="15"
+                fill="url(#gradient1)"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1.5,
+                  ease: 'easeInOut',
+                }}
+              />
+
+              {/* Center circle */}
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="20"
+                fill="url(#gradient1)"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  scale: {
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  },
+                  rotate: {
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  },
+                }}
+              />
+
+              {/* Animated connecting lines */}
+              <motion.line
+                x1="50"
+                y1="50"
+                x2="100"
+                y2="100"
+                stroke="url(#gradient1)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                animate={{
+                  opacity: [0.3, 0.8, 0.3],
+                  pathLength: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.line
+                x1="150"
+                y1="50"
+                x2="100"
+                y2="100"
+                stroke="url(#gradient2)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                animate={{
+                  opacity: [0.3, 0.8, 0.3],
+                  pathLength: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.5,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.line
+                x1="50"
+                y1="150"
+                x2="100"
+                y2="100"
+                stroke="url(#gradient2)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                animate={{
+                  opacity: [0.3, 0.8, 0.3],
+                  pathLength: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1,
+                  ease: 'easeInOut',
+                }}
+              />
+              <motion.line
+                x1="150"
+                y1="150"
+                x2="100"
+                y2="100"
+                stroke="url(#gradient1)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                animate={{
+                  opacity: [0.3, 0.8, 0.3],
+                  pathLength: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1.5,
+                  ease: 'easeInOut',
+                }}
+              />
+
+              {/* Outer connecting lines */}
+              <motion.line
+                x1="50"
+                y1="50"
+                x2="150"
+                y2="50"
+                stroke="url(#gradient1)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeDasharray="5,5"
+                animate={{
+                  opacity: [0.2, 0.5, 0.2],
+                  strokeDashoffset: [0, 10],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              />
+              <motion.line
+                x1="50"
+                y1="50"
+                x2="50"
+                y2="150"
+                stroke="url(#gradient2)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeDasharray="5,5"
+                animate={{
+                  opacity: [0.2, 0.5, 0.2],
+                  strokeDashoffset: [0, 10],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 0.75,
+                  ease: 'linear',
+                }}
+              />
+              <motion.line
+                x1="150"
+                y1="50"
+                x2="150"
+                y2="150"
+                stroke="url(#gradient1)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeDasharray="5,5"
+                animate={{
+                  opacity: [0.2, 0.5, 0.2],
+                  strokeDashoffset: [0, 10],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 1.5,
+                  ease: 'linear',
+                }}
+              />
+              <motion.line
+                x1="50"
+                y1="150"
+                x2="150"
+                y2="150"
+                stroke="url(#gradient2)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeDasharray="5,5"
+                animate={{
+                  opacity: [0.2, 0.5, 0.2],
+                  strokeDashoffset: [0, 10],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 2.25,
+                  ease: 'linear',
+                }}
+              />
+            </motion.svg>
+          </motion.div>
+
           {/* Animated Headline with gradient animation */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight"
           >
             <motion.span
               className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
@@ -147,7 +465,7 @@ export default function Hero() {
                 backgroundSize: '200% 200%',
               }}
             >
-              We Build Websites
+              We Build Websites and Apps
             </motion.span>
             <motion.span
               className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent mt-2"
@@ -163,23 +481,7 @@ export default function Hero() {
                 backgroundSize: '200% 200%',
               }}
             >
-              and Apps That Help
-            </motion.span>
-            <motion.span
-              className="block bg-gradient-to-r from-pink-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mt-2"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-              style={{
-                backgroundSize: '200% 200%',
-              }}
-            >
-              Your Business Grow
+              That Help Your Business Grow
             </motion.span>
           </motion.h1>
 
@@ -205,7 +507,7 @@ export default function Hero() {
           >
             <motion.a
               href="#contact"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg flex items-center gap-2 shadow-lg overflow-hidden"
+              className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium text-base flex items-center gap-2 shadow-lg overflow-hidden"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, x: -20 }}
@@ -239,7 +541,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-semibold text-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
+              className="px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-medium text-base border-2 border-gray-200 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-400 transition-all"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, x: 20 }}
@@ -256,7 +558,7 @@ export default function Hero() {
             className="mt-20"
           >
             <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-gray-200"
+              className="text-xl md:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -319,7 +621,7 @@ export default function Hero() {
                     >
                       <feature.icon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
                     </motion.div>
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
+                    <h3 className="text-base font-medium mb-2 text-gray-800 dark:text-gray-200">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
